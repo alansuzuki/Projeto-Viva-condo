@@ -13,9 +13,8 @@ export interface ICondominio {
 
 export const getCondominios = async () => {
 
-    const response = await fetch('https://raw.githubusercontent.com/vagner107/viva-condo/refs/heads/main/src/app/condominios/api_condominio.json')
-
-    return await response.json() // converte a resposta em Json
+    const response = await fetch("/api/condominios", {cache: "no-store"});
+    const{data,sucess, count, error} = await response.json();
 
 
 }
